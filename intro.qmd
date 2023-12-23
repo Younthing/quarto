@@ -28,3 +28,4 @@ ggplot(class, aes(x = displ, y = hwy)) +
   geom_point() +
   geom_smooth(se = FALSE)
 ```
+
