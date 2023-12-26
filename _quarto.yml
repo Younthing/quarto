@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: book
   output-dir: docs
  
 execute:
@@ -17,6 +17,7 @@ book:
 
 bibliography: ref/references.bib
 csl: ref/apa.csl
+
 
 format:
   html:

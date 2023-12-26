@@ -1,6 +1,12 @@
 /_book/
 /.quarto/
 /_site/
+**/_freeze/**
+**/docs/**
+
+
+
+
 # History files
 .Rhistory
 .Rapp.history
