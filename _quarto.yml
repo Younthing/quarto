@@ -1,13 +1,17 @@
 project:
   type: book
   output-dir: docs
- 
+  preview:
+    port: 4200
+    browser: true # 自动打开浏览器
+
 execute:
   freeze: auto
+  cache: true
 
 book:
-  title: "quarto"
-  author: "Norah Jones"
+  title: "单细胞空间转录组学"
+  author: "younthing"
   date: "12/23/2023"
   chapters:
     - index.qmd
@@ -15,22 +19,76 @@ book:
     - summary.qmd
     - references.qmd
 
-bibliography: ref/references.bib
-csl: ref/apa.csl
+# 引用
+bibliography: ref/references.bib # 参考文献，来自endnote，可以指定多个
+csl: ref/apa.csl # 引用格式APA，下载地址：https://www.zotero.org/styles
+citations-hover: true # 鼠标悬停显示引用
+citation-location: document  # 引用位置，document表示文档末尾，margin表示页边
 
+# keep
+# keep-md: true # 保留md文件
+keep-tex: true # 保留tex文件
 
+# style
+highlight-style: github
+code-block-border-left: "#FFFFFF" # 代码块左边框颜色
+code-block-bg: "#FFFFFF" # 代码块背景颜色
+
+#nav
+toc: true
+toc-title: "Contents"
+toc-depth: 3
+
+# 输出格式
 format:
   html:
+    page-layout: article
     theme: cosmo
-    code-link: true
+    
+    # code
+    code-link: true # 代码链接，仅knitr
+    code-fold: true # 全局代码折叠
+    code-tools: true # 全局代码选项
+    code-overflow: scroll # 代码溢出
+    code-annotations: true # 代码注释
+
+    # nav
     toc: true
-    toc_float: true
+    toc-title: "Contents"
+    toc-depth: 3
+    toc-location: right
+    toc-expand: true
+    anchor-sections: true # 允许悬停在章节标题上以查看锚链接
+
     mbed-resources: true
+
+
+    # 链接
+    link-external-filter: "127" # 判定外部链接
+    link-external-icon: true # 外部链接特殊图标
+    link-external-newwindow: true # 外部链接新窗口
+
+
   pdf:
+
+    # latex
     documentclass: scrreprt
+    pdf-engine: xelatex
+    mainfont: Times New Roman  # 衬线字体
+    # sansfont: # 无衬线字体
+    monofont: MesloLGS NF # 等宽字体
+    CJKmainfont: SimSun # 中日韩字体
+    # fontsize: 18pt # 字体大小
+    # 使用Quarto的内置渲染包装器（包括对自动安装缺少的 LaTeX 包的支持）
+    latex-auto-mk: true 
+    # 启用/禁用自动 LaTeX 包安装
+    latex-auto-install: true 
+    latex-auto-clean: true
+
   docx: default
+    # reference-docx: reference.docx
 
-
+# 渲染器
 knitr:
   opts_chunk:
     comment: "#>"
