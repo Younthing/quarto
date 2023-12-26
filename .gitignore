@@ -3,8 +3,9 @@
 /_site/
 **/_freeze/**
 **/docs/**
-
-
+**/intro_files/**
+/docs/
+/intro_files/
 
 
 # History files
