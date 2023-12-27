@@ -3,7 +3,9 @@ params:
   my_class: "suv"
 ---
 
-# Introduction
+# Introduction {#sec-intro}
+
+试一试首行缩进，应用标准英文风格，标题后没有首航缩进。
 
 This is a book created from markdown and executable code.
 
@@ -11,6 +13,8 @@ See @knuth84 for additional discussion of literate programming.
 
 ```{r}
 #| label: setup
+#| message: false
+
 
 library(tidyverse)
 
@@ -19,13 +23,30 @@ a <- 5
 a
 ```
 
-# Fuel economy for `r params$my_class`s
+## Fuel economy for `r params$my_class`s
+
+引用plot,@fig-intro
 
 ```{r}
 #| message: false
+#| label: fig-intro
+#| lightbox:
+#|   description: THIS IS LIGHT BOX 
 
 ggplot(class, aes(x = displ, y = hwy)) +
   geom_point() +
-  geom_smooth(se = FALSE)
+  geom_smooth(se = FALSE) +
+  theme_minimal()
 ```
 
+## Summary
+
+```{r}
+#| label: summary
+#| include: true
+
+plot(class$displ, class$hwy)
+
+```
+
+------------------------------------------------------------------------

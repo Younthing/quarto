@@ -1,5 +1,30 @@
-# Preface {.unnumbered}
+# 前言 {.unnumbered}
 
-This is a Quarto book.
+## 说明
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+-   pdf由latex构建
+
+-   中文支持需要在yaml中设置CJKmainfont
+
+-   支持直接插入latex语法：
+
+    -   通过`\setlength{\parindent}{2em}`设置首行缩进为2个字符
+    -   通过`\setlength{\parskip}{1.5em}`设置段间距为1.5个字符
+
+-   这里是一个章节引用 @sec-intro
+
+    -   `sec-intro` 需要先用章节设置标签`#sec-intro`
+
+-   短代码扩展
+
+    -   安装\`\$ quarto create extension shortcode\`
+
+    -   使用{{{< meta title>}}}引用文档meta数据,{{< meta title>}}
+
+    -   使用{{{< var version >}}} 引用_variables.yml中的变量 {{< var version >}}
+
+-   molstar
+
+    -   使用{{{< mol-rcsb 7sgl >}}}画出分子结构，还有其他方式 {{< mol-rcsb 7sgl >}}
+
+-   shinylive 将shinylive应用程序嵌入到quarto
